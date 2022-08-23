@@ -10,7 +10,7 @@ const Cast = lazy(() => import('./Cast'));
 const Reviews = lazy(() => import('./Reviews'));
 
 export const App = () => {
-  const [movieId, setMovieId] = useState(null);
+  const [movieId, setMovieId] = useState('');
   const onMovieClick = id => {
     setMovieId(id);
   };

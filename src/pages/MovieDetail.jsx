@@ -17,7 +17,6 @@ const MovieDetail = ({ id }) => {
     }
   }, [id]);
 
-  console.log(movieDet);
   const { title, name, poster_path, genres, overview, vote_average } = movieDet;
 
   if (movieDet === []) {
