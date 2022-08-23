@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import fetchFilm from 'fetchFilms';
+
 const Home = ({ onMovieCl }) => {
   const [moviesTrand, setMoviesTrand] = useState([]);
 
@@ -9,7 +10,6 @@ const Home = ({ onMovieCl }) => {
     const url = `https://api.themoviedb.org/3/trending/all/day?api_key=${KEY_API}`;
     fetchFilm(url)
       .then(movie => {
-        console.log(movie);
         setMoviesTrand(movie.results);
       })
       .catch(error => console.log(error));
@@ -31,4 +31,5 @@ const Home = ({ onMovieCl }) => {
     </div>
   );
 };
+
 export default Home;
