@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import fetchFilm from 'fetchFilms';
 import MovieList from 'components/MovieList';
 
-const Home = ({ onMovieCl }) => {
+const Home = () => {
   const [moviesTrand, setMoviesTrand] = useState([]);
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import fetchFilm from 'fetchFilms';
 import CastList from './CastList';
@@ -6,7 +6,7 @@ import CastList from './CastList';
 const Cast = () => {
   const [castArrey, setCastArrey] = useState([]);
   const { movieId } = useParams();
-  const location = useLocation();
+  //   const location = useLocation();
 
   useEffect(() => {
     if (movieId === '') {
