@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import fetchFilm from 'fetchFilms';
+import MovieList from 'components/MovieList';
 
 const Home = ({ onMovieCl }) => {
   const [moviesTrand, setMoviesTrand] = useState([]);
@@ -14,21 +14,11 @@ const Home = ({ onMovieCl }) => {
       })
       .catch(error => console.log(error));
   }, []);
-  console.log(moviesTrand);
+
   return (
-    <div>
-      <ul>
-        {moviesTrand.map(movie => (
-          <Link
-            to="/movies/:movieId"
-            key={movie.id}
-            onClick={() => onMovieCl(movie.id)}
-          >
-            {movie.title ? movie.title : movie.name}
-          </Link>
-        ))}
-      </ul>
-    </div>
+    <main>
+      <MovieList moviesAr={moviesTrand} />
+    </main>
   );
 };
 
