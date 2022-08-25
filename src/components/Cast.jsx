@@ -20,7 +20,6 @@ const Cast = () => {
         .catch(error => console.log(error));
     }
   }, [movieId]);
-  console.log(castArrey);
 
   return (
     <section>

@@ -20,7 +20,6 @@ const Reviews = () => {
         .catch(error => console.log(error));
     }
   }, [movieId]);
-  console.log(reviewsArrey);
 
   return (
     <section>

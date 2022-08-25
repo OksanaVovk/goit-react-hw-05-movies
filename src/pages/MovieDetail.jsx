@@ -14,10 +14,8 @@ import {
 const MovieDetail = () => {
   const [movieDet, setMovieDet] = useState([]);
   const location = useLocation();
-  console.log(location);
   const backLinkHref = location.state?.from ?? '/';
   const { movieId } = useParams();
-  console.log(movieId);
 
   useEffect(() => {
     if (movieId === '') {
@@ -34,9 +32,9 @@ const MovieDetail = () => {
   }, [movieId]);
 
   const { title, name, poster_path, genres, overview, vote_average } = movieDet;
-  console.log(movieDet);
+
   if (movieDet.length === 0) {
-    return;
+    return <p>We don't have any information for this movie.</p>;
   } else {
     return (
       <main>
@@ -46,7 +44,7 @@ const MovieDetail = () => {
         <Conteiner>
           <Img
             src={
-              poster_path !== undefined
+              poster_path !== undefined || poster_path !== null
                 ? `https://image.tmdb.org/t/p/w500${poster_path}`
                 : `https://mysteriouswritings.com/wp-content/uploads/2017/02/movie.jpg`
             }

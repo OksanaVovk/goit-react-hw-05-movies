@@ -19,7 +19,7 @@ const Movies = () => {
   const handleSubmit = event => {
     event.preventDefault();
     if (inputValue === '') {
-      return Notify.info('Please enter search data.');
+      return setTimeout(Notify.info('Please enter search data.'), 3000);
     } else {
       setSearchWord(inputValue);
       setSearchParams({ query: inputValue });
@@ -43,6 +43,9 @@ const Movies = () => {
           setMoviesSearch(movie.results);
           setSearchWord('');
           setInputValue('');
+          if (movie.results.length === 0) {
+            Notify.info('We did not find any movies for this request.');
+          }
         })
         .catch(error => console.log(error));
     }
