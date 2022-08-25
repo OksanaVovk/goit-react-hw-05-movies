@@ -3,6 +3,7 @@ import fetchFilm from 'fetchFilms';
 import { useSearchParams } from 'react-router-dom';
 import MovieList from 'components/MovieList';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { Input, ButtonSearch, Form } from './Movies-styled';
 
 const Movies = () => {
   const [inputValue, setInputValue] = useState('');
@@ -49,15 +50,15 @@ const Movies = () => {
 
   return (
     <main>
-      <form onClick={handleSubmit}>
-        <input
+      <Form onClick={handleSubmit}>
+        <Input
           type="text"
           name="query"
           value={inputValue}
           onChange={handleSearchChange}
-        ></input>
-        <button type="submit">Search</button>
-      </form>
+        ></Input>
+        <ButtonSearch type="submit">Search</ButtonSearch>
+      </Form>
       <MovieList moviesAr={moviesSearch}></MovieList>
     </main>
   );
