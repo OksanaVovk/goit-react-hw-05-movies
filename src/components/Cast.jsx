@@ -6,7 +6,6 @@ import CastList from './CastList';
 const Cast = () => {
   const [castArrey, setCastArrey] = useState([]);
   const { movieId } = useParams();
-  //   const location = useLocation();
 
   useEffect(() => {
     if (movieId === '') {

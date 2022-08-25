@@ -15,17 +15,6 @@ const Movies = () => {
     setInputValue(event.currentTarget.value.toLowerCase());
   };
 
-  //   const handleSubmit = event => {
-  //     event.preventDefault();
-  //     if (inputValue === '') {
-  //       return Notify.info('Please enter search data.');
-  //     } else if (query) {
-  //       onSubmit(query);
-  //     } else {
-  //       onSubmit(inputValue);
-  //     }
-  //     };
-
   const handleSubmit = event => {
     event.preventDefault();
     if (inputValue === '') {

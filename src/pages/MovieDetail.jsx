@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import fetchFilm from 'fetchFilms';
@@ -6,6 +6,7 @@ import fetchFilm from 'fetchFilms';
 const MovieDetail = () => {
   const [movieDet, setMovieDet] = useState([]);
   const location = useLocation();
+  console.log(location);
   const backLinkHref = location.state?.from ?? '/';
   const { movieId } = useParams();
   console.log(movieId);
@@ -26,7 +27,7 @@ const MovieDetail = () => {
 
   const { title, name, poster_path, genres, overview, vote_average } = movieDet;
   console.log(movieDet);
-  if (movieDet === []) {
+  if (movieDet.length === 0) {
     return;
   } else {
     return (
@@ -65,7 +66,9 @@ const MovieDetail = () => {
             <Link to="reviews">Reviews</Link>
           </li>
         </ul>
-        <Outlet />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Outlet />
+        </Suspense>
       </main>
     );
   }
