@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { fetchSearchFilms } from 'fetchFilms';
+import { fetchSearchFilms } from 'servises';
 import { useSearchParams } from 'react-router-dom';
 import MovieList from 'components/MovieList';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';

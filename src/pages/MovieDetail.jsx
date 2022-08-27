@@ -1,7 +1,7 @@
 import { useState, useEffect, Suspense } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import { fetchDetailFilm } from 'fetchFilms';
+import { fetchDetailFilm } from 'servises';
 import {
   Conteiner,
   Img,

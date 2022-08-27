@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { fetchCasts } from 'fetchFilms';
+import { fetchCasts } from 'servises';
 import CastList from './CastList';
 
 const Cast = () => {
