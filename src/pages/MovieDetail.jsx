@@ -1,7 +1,7 @@
 import { useState, useEffect, Suspense } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import fetchFilm from 'fetchFilms';
+import { fetchDetailFilm } from 'fetchFilms';
 import {
   Conteiner,
   Img,
@@ -21,9 +21,7 @@ const MovieDetail = () => {
     if (movieId === '') {
       return;
     } else {
-      const KEY_API = '024bf82d4805f650033dc69997860333';
-      const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${KEY_API}&language=en-US`;
-      fetchFilm(url)
+      fetchDetailFilm(movieId)
         .then(movie => {
           setMovieDet(movie);
         })

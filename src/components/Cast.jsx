@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import fetchFilm from 'fetchFilms';
+import { fetchCasts } from 'fetchFilms';
 import CastList from './CastList';
 
 const Cast = () => {
@@ -11,9 +11,7 @@ const Cast = () => {
     if (movieId === '') {
       return;
     } else {
-      const KEY_API = '024bf82d4805f650033dc69997860333';
-      const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${KEY_API}&language=en-US`;
-      fetchFilm(url)
+      fetchCasts(movieId)
         .then(actors => {
           setCastArrey(actors.cast);
         })
